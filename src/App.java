@@ -5,7 +5,7 @@ public class App {
 
         Point generator = new Point(1, 1);
 
-        System.out.println(ecc.pointAddition(generator, generator));
+        System.out.println(ecc.doubleAndAdd(100, generator));
 
     }
 }

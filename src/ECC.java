@@ -10,6 +10,28 @@ public class ECC {
         this.b = b;
     }
 
+    // It has 0(n) linear running time complexity
+    public Point doubleAndAdd(int n, Point p) {
+        Point temp = new Point(p.getX(), p.getY());
+
+        String nBinary = Integer.toBinaryString(n);
+
+        for (int i = 1; i < nBinary.length(); ++i) {
+            int actualBit = Integer.parseInt("" + nBinary.charAt(i));
+
+            // Point doubling operation
+            temp = pointAddition(temp, temp);
+
+            if (actualBit == 1) {
+
+                // Point addition operation
+                temp = pointAddition(temp, p);
+            }
+        }
+
+        return temp;
+    }
+
     public Point pointAddition(Point p, Point q) {
         double x1 = p.getX();
         double y1 = p.getY();
@@ -37,5 +59,4 @@ public class ECC {
         return new Point(x3, y3);
 
     }
-
 }
