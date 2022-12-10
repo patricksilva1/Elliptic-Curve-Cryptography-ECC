@@ -1,3 +1,4 @@
+// A point on the EC
 public class Point {
 
     private double x;
