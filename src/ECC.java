@@ -23,7 +23,7 @@ public class ECC {
         // if P = Q then we need to do point doubling
         if (Double.compare(x1, x2) == 0 && Double.compare(y1, y2) == 0) {
             // Point doubling (P = Q)
-            m = (3 * x1 * x2 + a) / (2 * y1);
+            m = (3 * x1 * x1 + a) / (2 * y1);
         } else {
             // Point addition (P != Q)
             m = (y2 - y1) / (x2 - x1);
